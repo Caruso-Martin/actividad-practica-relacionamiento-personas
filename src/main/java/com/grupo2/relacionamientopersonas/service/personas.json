@@ -1,0 +1,29 @@
+{
+  "personas": [
+    {
+      "dni": 1,
+      "nombre":"Laura",
+      "apellido":"Fernández"
+    },
+    {
+      "dni": 2,
+      "nombre":"Mariela",
+      "apellido":"Benavente"
+    },
+    {
+      "dni": 3,
+      "nombre":"Juan",
+      "apellido":"Martinez"
+    },
+    {
+      "dni": 4,
+      "nombre":"Esteban",
+      "apellido":"Quito"
+    },
+    {
+      "dni": 5,
+      "nombre":"Maria",
+      "apellido":"Rodriguez"
+    }
+  ]
+}
