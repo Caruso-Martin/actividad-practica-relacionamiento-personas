@@ -22,12 +22,12 @@ public class AdministratorController {
 
     //TODO: Los endpoints deberian pedir la autorizacion de "Admin"
 
-    @GetMapping // Item: 8
+    @GetMapping(path = "person-list") // Item: 8
     public List<Person> getAllPersons() {
         return administratorService.getAllPersons();
     }
 
-    @GetMapping // Item: 9
+    @GetMapping(path = "delegation-list") // Item: 9
     public List<Delegation> getAllDelegations() {
         return administratorService.getAllDelegations();
     }

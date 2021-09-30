@@ -5,6 +5,8 @@ public enum DelegationStatus {
     REJECTED,
     ACCEPTED;
 
+    //<editor-fold desc="fromInteger() and toString()" defaultstate="collapsed">
+
     public static DelegationStatus fromInteger(int statusNumber) {
         switch(statusNumber) {
             case 0:
@@ -21,4 +23,6 @@ public enum DelegationStatus {
     public String toString() {
         return super.toString();
     }
+
+    //</editor-fold>
 }

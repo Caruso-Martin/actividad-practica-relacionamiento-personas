@@ -18,6 +18,7 @@ public class DelegationService {
     }
 
     public Delegation getDelegationById(Long idDelegation) {
+        this.validateDelegationId(idDelegation);
         return delegationRepository.findDelegationById(idDelegation);
     }
 
@@ -36,4 +37,18 @@ public class DelegationService {
     public void delegationAuthorizationRevoke(Long idDelegation) {
         delegationRepository.deleteById(idDelegation);
     }
+
+    //<editor-fold desc="Validations" defaultstate="collapsed">
+
+    private void validateDelegationId(Long id) {
+        if(id <= 0)
+            System.out.println("ID " + id + " invalido");
+        //throw new IllegalAccessException("ID " + id + " invalido");
+
+        if(!delegationRepository.existsById(id))
+            System.out.println("No existe una delegacion con ID " + id);
+        //throw new IllegalAccessException("No existe una persona con ID " + id);
+    }
+
+    //</editor-fold>
 }
