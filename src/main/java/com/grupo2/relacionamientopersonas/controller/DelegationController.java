@@ -16,22 +16,22 @@ public class DelegationController {
     }
 
     @GetMapping(path = "{delegationId}")
-    public Delegation getDelegationById(@PathVariable("delegationId") Long idDelegation) {
-        return delegationService.getDelegationById(idDelegation);
+    public Delegation getDelegationById(@PathVariable("delegationId") Long delegationId) {
+        return delegationService.getDelegationById(delegationId);
     }
 
     @PostMapping(path = "authorization") // Item: 4
-    public void delegationAuthorization(@RequestBody Delegation delegation) {
-        delegationService.delegationAuthorization(delegation);
+    public void delegationAuthorization(@RequestParam Long delegativeDni, @RequestParam Long delegateDni) {
+        delegationService.delegationAuthorization(delegativeDni, delegateDni);
     }
 
     @PutMapping(path = "acceptance") // Item: 5 y 7
-    public void delegationAcceptance(@RequestBody Long idDelegation, @RequestBody Boolean delegationAcceptance) {
-        delegationService.delegationAcceptance(idDelegation, delegationAcceptance);
+    public void delegationAcceptance(@RequestParam Long delegationId, @RequestParam Boolean delegationAcceptance) {
+        delegationService.delegationAcceptance(delegationId, delegationAcceptance);
     }
 
-    @DeleteMapping(path = "revoke-authorization") // Item: 6
-    public void delegationAuthorizationRevoke(@RequestBody Long idDelegation) {
-        delegationService.delegationAuthorizationRevoke(idDelegation);
+    @DeleteMapping(path = "revoke-authorization/{delegationId}") // Item: 6
+    public void delegationAuthorizationRevoke(@PathVariable Long delegationId) {
+        delegationService.delegationAuthorizationRevoke(delegationId);
     }
 }

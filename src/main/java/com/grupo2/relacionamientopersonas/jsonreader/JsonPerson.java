@@ -1,20 +1,55 @@
 package com.grupo2.relacionamientopersonas.jsonreader;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.*;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "personbasicinfo")
 public class JsonPerson {
-    private Integer dni;
+    @Id
+    @SequenceGenerator(
+            name = "personbasicinfo_sequence",
+            sequenceName = "personbasicinfo_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "personbasicinfo_sequence"
+    )
+    private Long id;
+
+    private Long dni;
     private String name;
     private String lastname;
 
+    //<editor-fold desc="Constructors" defaultstate="collapsed">
+
+    public JsonPerson(Long dni, String name, String lastname) {
+        this.dni = dni;
+        this.name = name;
+        this.lastname = lastname;
+    }
+
+    public JsonPerson() {
+    }
+
+
+    //</editor-fold>
+
     //<editor-fold desc="Getters and Setters" defaultstate="collapsed">
 
-    public Integer getDni() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getDni() {
         return dni;
     }
 
-    public void setDni(Integer dni) {
+    public void setDni(Long dni) {
         this.dni = dni;
     }
 

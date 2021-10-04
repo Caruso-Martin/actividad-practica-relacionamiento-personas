@@ -1,9 +1,12 @@
 package com.grupo2.relacionamientopersonas.controller;
 
-import com.grupo2.relacionamientopersonas.domain.user.User;
+import com.grupo2.relacionamientopersonas.domain.User;
+import com.grupo2.relacionamientopersonas.jsonreader.JsonPerson;
 import com.grupo2.relacionamientopersonas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping(path = "user")
@@ -20,14 +23,14 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
-    @PostMapping // Item: 1
-    public void signUpUser(@RequestBody Integer dni, @RequestBody String name, @RequestBody String lastname, @RequestBody User user) {
-        userService.signUpUser(dni, name, lastname, user);
+    @PostMapping(path = "signup") // Item: 1
+    public void signUpUser(@RequestBody JsonPerson jsonPerson) throws IOException {
+        userService.signUp(jsonPerson);
     }
 
-    /*@XMapping // Item: 2
-    public void userLogIn(User user) {
-        return userService.userLogin(User user);
-    }*/
+    @PostMapping(path = "login") // Item: 2
+    public Boolean userLogIn(@RequestBody User user) {
+        return userService.logIn(user);
+    }
 
 }

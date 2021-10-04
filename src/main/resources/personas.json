@@ -1,29 +1,28 @@
-{
-  "personas": [
+[
     {
       "dni": 1,
-      "nombre":"Laura",
-      "apellido":"Fernández"
+      "name":"Laura",
+      "lastname":"Fernández"
     },
     {
       "dni": 2,
-      "nombre":"Mariela",
-      "apellido":"Benavente"
+      "name":"Mariela",
+      "lastname":"Benavente"
     },
     {
       "dni": 3,
-      "nombre":"Juan",
-      "apellido":"Martinez"
+      "name":"Juan",
+      "lastname":"Martinez"
     },
     {
       "dni": 4,
-      "nombre":"Esteban",
-      "apellido":"Quito"
+      "name":"Esteban",
+      "lastname":"Quito"
     },
     {
       "dni": 5,
-      "nombre":"Maria",
-      "apellido":"Rodriguez"
+      "name":"Maria",
+      "lastname":"Rodriguez"
     }
-  ]
-}
+]
+

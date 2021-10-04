@@ -1,6 +1,10 @@
-package com.grupo2.relacionamientopersonas.domain.user;
+package com.grupo2.relacionamientopersonas.domain;
+
+import com.grupo2.relacionamientopersonas.domain.delegation.Delegation;
+import com.grupo2.relacionamientopersonas.domain.person.Person;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -19,9 +23,29 @@ public class User {
 
     private String username;
     private String password;
+    private Boolean isAdministrator;
 
-    @Transient
-    private UserState state;
+    /*public List<Person> reportPersonList() {
+
+    }
+
+    public List<Delegation> reportDelegationList() {
+
+    }*/
+
+    //<editor-fold desc="Constructors" defaultstate="collapsed">
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.isAdministrator = false;
+    }
+
+    public User() {
+
+    }
+
+    //</editor-fold>
 
     //<editor-fold desc="Getters and Setters" defaultstate="collapsed">
 
@@ -49,12 +73,12 @@ public class User {
         this.password = password;
     }
 
-    public UserState getState() {
-        return state;
+    public Boolean getAdministrator() {
+        return isAdministrator;
     }
 
-    public void setState(UserState state) {
-        this.state = state;
+    public void setAdministrator(Boolean administrator) {
+        isAdministrator = administrator;
     }
 
     //</editor-fold>

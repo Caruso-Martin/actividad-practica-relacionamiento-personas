@@ -21,7 +21,7 @@ public class PersonController {
         return personService.getPersonById(personId);
     }
 
-    @PutMapping(path = "person/update") // Item: 3
+    @PutMapping(path = "update") // Item: 3
     public void updatePersonData(@RequestBody Person person) {
         personService.updatePersonData(person);
     }

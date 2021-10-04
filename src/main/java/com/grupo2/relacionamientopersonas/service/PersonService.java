@@ -29,8 +29,8 @@ public class PersonService {
         Person person = this.getPersonById(newPerson.getId());
         person.setCity(newPerson.getCity());
         person.setLocality(newPerson.getLocality());
-        person.setBirthday(newPerson.getBirthday());
-        person.setPhoto(newPerson.getPhoto());
+        person.setBirthday(newPerson.getBirthday()); // Ejemplo: "2020-06-28"
+        person.setPhoto(newPerson.getPhoto());       // TODO: Guardar foto
     }
 
     //<editor-fold desc="Validations" defaultstate="collapsed">

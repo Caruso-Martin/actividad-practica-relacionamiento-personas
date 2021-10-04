@@ -2,7 +2,7 @@ package com.grupo2.relacionamientopersonas.domain.person;
 
 import com.grupo2.relacionamientopersonas.domain.delegation.Delegation;
 import com.grupo2.relacionamientopersonas.domain.delegation.DelegationStatus;
-import com.grupo2.relacionamientopersonas.domain.user.User;
+import com.grupo2.relacionamientopersonas.domain.User;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -23,7 +23,7 @@ public class Person {
     )
     private Long id;
 
-    private Integer dni;
+    private Long dni;
     private String name;
     private String lastname;
     private String city;
@@ -38,10 +38,12 @@ public class Person {
     @JoinColumn(name = "photo_id", referencedColumnName = "id")
     private Photo photo;
 
-    @OneToMany(mappedBy = "delegative", cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "delegativeDelegations_id")
     private List<Delegation> delegativeDelegations; // "Son las que el usuario autoriza"
 
-    @OneToMany(mappedBy = "delegate", cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "delegateDelegations_id")
     private List<Delegation> delegateDelegations;   // "Son las que el usuario es autorizado"
 
     private void acceptDelegation(Delegation delegation) {
@@ -53,6 +55,12 @@ public class Person {
     }
 
     //<editor-fold desc="Constructors" defaultstate="collapsed">
+
+    public Person(Long dni, String name, String lastname) {
+        this.dni = dni;
+        this.name = name;
+        this.lastname = lastname;
+    }
 
     public Person() {
     }
@@ -69,11 +77,11 @@ public class Person {
         this.id = id;
     }
 
-    public Integer getDni() {
+    public Long getDni() {
         return dni;
     }
 
-    public void setDni(Integer dni) {
+    public void setDni(Long dni) {
         this.dni = dni;
     }
 

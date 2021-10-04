@@ -1,6 +1,7 @@
 package com.grupo2.relacionamientopersonas.domain.delegation;
 
 import com.grupo2.relacionamientopersonas.domain.person.Person;
+import com.grupo2.relacionamientopersonas.jsonreader.JsonPerson;
 
 import javax.persistence.*;
 
@@ -11,16 +12,29 @@ public class Delegation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "delegative_id")
-    private Person delegative;
+    private JsonPerson delegative;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "delegate_id")
-    private Person delegate;
+    private JsonPerson delegate;
 
     @Enumerated(EnumType.STRING)
     private DelegationStatus status;
+
+    //<editor-fold desc="Constructors" defaultstate="collapsed">
+
+    public Delegation(JsonPerson delegative, JsonPerson delegate) {
+        this.delegative = delegative;
+        this.delegate = delegate;
+        this.status = DelegationStatus.WAITING;
+    }
+
+    public Delegation() {
+    }
+
+    //</editor-fold>
 
     //<editor-fold desc="Getters and Setters" defaultstate="collapsed">
 
@@ -32,19 +46,19 @@ public class Delegation {
         this.id = id;
     }
 
-    public Person getDelegative() {
+    public JsonPerson getDelegative() {
         return delegative;
     }
 
-    public void setDelegative(Person delegative) {
+    public void setDelegative(JsonPerson delegative) {
         this.delegative = delegative;
     }
 
-    public Person getDelegate() {
+    public JsonPerson getDelegate() {
         return delegate;
     }
 
-    public void setDelegate(Person delegation) {
+    public void setDelegate(JsonPerson delegation) {
         this.delegate = delegation;
     }
 
