@@ -5,6 +5,8 @@
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     	<!--   <link href='./estiloDePtoMedio.css' rel='stylesheet'>  -->
     	<link href='./estiloResgistro.css' rel='stylesheet'>
+	   <!-- Sweet Alert -->
+	   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -25,14 +27,25 @@
 					</div>
 					<div class="mb-3">
 					  <label for="formGroupContrasena" class="form-label">Ingresar Contraseña</label>
-					  <input type="text" class="form-control" id="formGroupContrasena" placeholder="Contrasena">
+					  <input type="password" class="form-control" id="formGroupContrasena" placeholder="Contrasena">
 					</div>
 					<div class="mb-3">
 					  <label for="formGroupContrasena2" class="form-label">Re-Ingresar Contraseña</label>
 					  <input type="text" class="form-control" id="formGroupContrasena2" placeholder="Contraseña">
 					</div>
-					<button class="btn btn-primary" type="submit">Registrarse</button>
+					<button class="btn btn-primary" type="submit" onclick="fireSweetAlert()">Registrarse</button>
 				</div>
+				<script>
+					function fireSweetAlert() {
+						var success = false; // TODO: este success depende de si esta en la lista de invitados
+						if(success) {
+							swal("Listo!", "Estas habilitado para registrarte", "success");
+						}
+						else {
+							swal("Error", "No podes registrarte. No te encontras en la lista de invitados", "error");
+						}
+					}
+			  </script>
 		    </div>
 		    <div class="col-3">
 		      
