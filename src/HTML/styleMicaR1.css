@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+li, a, button{
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #424242;
+    text-decoration: none;
+}
+
+personas{
+    display : flex;
+    justify-content: space-between;
+    align-items: left;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    background-color: #0077b6;
+}
+h1{
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: #ffffff;
+}
+nav {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 400px;
+    background-color: #fafafa;
+}
+.nav_links{
+    list-style: none;
+    background-color: #fafafa;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: #fafafa;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    background-color: #fafafa;
+}
+
+.nav_links li a:hover {
+    color: #0077b6;
+}
+
+h2{
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0077b6;
+}
+table, th, td {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border-collapse: collapse;
+    border: 1px solid #424242;
+    text-align: left;
+    padding-top: 100px;
+    padding-left: 40px;
+  }
+  th {
+    background-color: #0077b6;
+    color: white;
+  }
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table{
+    width: 450px;
+}
+td{
+    height: 10px
+}
+button{
+    font-weight: 400;
+    background-color: #00b4d8;
+    color:#ffffff;
+    border-radius: 12px;
+    border-width: 0;
+}
+
+col{
+    float: left;
+    align-items: center;
+    padding-top: 100px;
+}
+
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+  
