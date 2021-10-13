@@ -77,7 +77,6 @@ public class UserService {
 
     private Boolean validateSignUp(JsonPerson jsonPerson) throws IOException {
         List<JsonPerson> persons = this.getPersonsFromJSON();
-        //TODO: Validar si la persona tiene un usuario ya registrado
 
         Boolean allowedPerson = persons.stream().anyMatch(p -> Objects.equals(p.getDni(), jsonPerson.getDni()) && Objects.equals(p.getName(), jsonPerson.getName()) && Objects.equals(p.getLastname(), jsonPerson.getLastname()));
         Boolean alreadyRegistered = userRepository.existsByUsername(jsonPerson.getName().charAt(0) + "." + jsonPerson.getLastname());
@@ -91,7 +90,6 @@ public class UserService {
     }
 
     private Boolean validateLogIn(User user) {
-        // TODO
         return userRepository.existsByUsername(user.getUsername());
     }
 

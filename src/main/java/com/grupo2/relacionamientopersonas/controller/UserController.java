@@ -33,4 +33,10 @@ public class UserController {
         return userService.logIn(user);
     }
 
+
+    //TODO: Mantener sesion abierta -> Log Out User
+    //@PostMapping(path = "login") // Item: 12
+    //public Boolean userLogOut(@RequestBody User user) {
+    //    return userService.logIn(user);
+    //}
 }

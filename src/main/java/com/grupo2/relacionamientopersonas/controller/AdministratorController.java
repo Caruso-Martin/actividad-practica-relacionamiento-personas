@@ -20,7 +20,7 @@ public class AdministratorController {
         this.administratorService = administratorService;
     }
 
-    //TODO: Los endpoints deberian pedir la autorizacion de "Administrador"
+    //TODO: Mantener sesion abierta -> Pedir la autorizacion de "Administrador"
 
     @GetMapping(path = "person-list") // Item: 8
     public List<Person> getAllPersons() {
