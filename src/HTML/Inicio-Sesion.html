@@ -1,0 +1,66 @@
+<html>
+   <head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    	<!--   <link href='./estiloDePtoMedio.css' rel='stylesheet'>  -->
+    	<link href='./estiloResgistro.css' rel='stylesheet'>
+	   <!-- Sweet Alert -->
+	   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+		  <div class="row">
+		    <div class="col-3">
+		      
+		    </div>
+		    <div class="col-6">
+		      	<div class="Login" style='margin-top:150px; border: 3px solid black; padding: 25px; background-color:#E3E4E5'>
+		      		<h2><b>Iniciar Sesión</b></h2>
+					<div class="mb-3">
+					  <label for="formGroupUser" class="form-label">Usuario</label>
+					  <input type="text" class="form-control" id="formGroupUser" placeholder="Usuario">
+					</div>
+					<div class="mb-3">
+					  <label for="formGroupPassword" class="form-label">Contraseña</label>
+					  <input type="password" class="form-control" id="formGroupPassword" placeholder="Contraseña">
+					</div>
+					<div class="mb-3">
+						<input type="checkbox" id="showPass" name="showPass" onclick="showPassword()">
+						<label for="showPass"> Mostrar Contraseña</label>
+					</div>
+					<script>
+						function showPassword() {
+						  var x = document.getElementById("formGroupPassword");
+						  if (x.type === "password") {
+							x.type = "text";
+						  } else {
+							x.type = "password";
+						  }
+						}
+				  </script>
+					<button class="btn btn-primary" type="submit" onclick="fireSweetAlert()">Iniciar Sesión</button> <br>
+					<div class="col-9">
+						<p><a href="Registro.html">Todavia no estas registrado? Registrate.</a></p>
+					</div>
+				</div>
+				<script>
+					function fireSweetAlert() {
+						var success = false; // TODO: este success depende de si el user y password estan bien
+						if(success) {
+							swal("Listo!", "Te redirigeremos a ... (TODO)", "success");
+						}
+						else {
+							swal("Error", "Tu usuario o contraseña no son correctos", "error");
+						}
+					}
+			  </script>
+		    </div>
+		  </div>
+		</div>
+		
+	</body>
+
+
+
+</html>
